@@ -1,11 +1,16 @@
 {
-  "name": "no-md-editor",
+  "name": "nomd-editor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.8.4",
+    "immutable": "^3.8.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "slate": "^0.40.2",
+    "slate-react": "^0.18.4",
+    "slate-schema-violations": "^0.1.39"
   },
   "scripts": {
     "start": "react-scripts start",

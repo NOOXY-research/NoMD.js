@@ -55,7 +55,7 @@ class NoMDEditorToolbar extends Component {
 }
 
 class NoMDEditor extends Component {
-
+  // onSave
   state = {
     value: Value.fromJSON(initialValue)
   }
@@ -78,8 +78,10 @@ class NoMDEditor extends Component {
   }
 
   onClickBlock = (event, type) => {
-    
+
   }
+
+  onSave = this.props.onSave;
 
   onChange = ({ value }) => {
     this.setState({ value })
@@ -99,8 +101,6 @@ class NoMDEditor extends Component {
     const { attributes } = props;
 
     switch (props.node.type) {
-      case 'paragraph':
-        return <p {...attributes}>{props.children}</p>;
       case 'block-quote':
         return <blockquote {...attributes}>{props.children}</blockquote>;
       case 'bulleted-list':
@@ -165,7 +165,7 @@ class NoMDEditor extends Component {
     return (
       <div className="NoMDEditor">
         <NoMDEditorToolbar buttons={[
-          ['save', 'save', 'save', 0, null],
+          ['save', 'save', 'save', 0, ()=>{this.onSave(this.state.value)}],
           this.renderMarkButton('bold', 'format_bold', ''),
           this.renderMarkButton('italic', 'format_italic', ''),
           this.renderMarkButton('underlined', 'format_underlined', ''),
